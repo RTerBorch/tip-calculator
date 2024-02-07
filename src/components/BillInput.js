@@ -19,9 +19,8 @@ export function BillInput({ onSetBillValue, billValue }) {
       <input
         className={isCorrectFormat ? undefined : "wrongFormat"}
         type="text"
-        value={billValue} // Control the input with billValue state
-        onChange={(event) => setBillWithFormat(event.target.value)}
-        onBlur={(event) => setBillWithFormat(event.target.value)}
+        value={billValue}
+        onChange={(event) => setBillWithFormat(Number(event.target.value))}
       />
       {!isCorrectFormat && <p className="wrongFormat">invalid input</p>}
     </div>
